@@ -44,5 +44,11 @@ namespace JoinedEntityTableTask.Controllers
             var categories = await _db.Categories.ToListAsync();
             ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
         }
+
+        [HttpGet]
+        public JsonResult CheckDuplicateProductName(string productName) {
+            bool isDuplicate = _db.Products.Any(p => p.ProductName == productName);
+            return Json(new { isDuplicate });
+        }
     }
 }

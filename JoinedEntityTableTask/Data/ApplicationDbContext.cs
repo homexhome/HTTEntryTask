@@ -16,6 +16,9 @@ namespace JoinedEntityTableTask.Data
             modelBuilder.Entity<Category>()
                 .HasIndex(p => new { p.CategoryName })
                 .IsUnique(true);
+            modelBuilder.Entity<Product>()
+                .HasIndex(p => new { p.ProductName })
+                .IsUnique(true);
         }
     }
 }

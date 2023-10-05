@@ -35,7 +35,7 @@ namespace JoinedEntityTableTask.Controllers
                 prod => prod.CategoryId,
                 cat => cat.CategoryId,
                 (prod, cat) => new ProductCategoryViewModel {
-                    ProductName = prod.Name,
+                    ProductName = prod.ProductName,
                     CategoryName = cat.CategoryName
                 }).ToList();
         }
